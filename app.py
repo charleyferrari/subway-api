@@ -41,9 +41,9 @@ def return_subway_json():
                 seconds = delta.seconds%60
                 number = int(train.nyc_train_id[:2])
                 if '121S' in update.stop_id:
-                    train_json['southbound'].append('Southbound {} train arrives in {} min'.format(str(number), str(minutes)))
+                    train_json['southbound'].append({'number': str(number), 'minutes': str(minutes)})
                 elif '121N' in update.stop_id:
-                    train_json['northbound'].append('Northbound {} train arrives in {} min'.format(str(number), str(minutes)))
+                    train_json['northbound'].append({'number': str(number), 'minutes': str(minutes)})
                     
         return jsonify(train_json)
     
