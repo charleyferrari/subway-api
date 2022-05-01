@@ -52,7 +52,7 @@ def return_message_json():
         southbound_86 = sorted(southbound_86, key=lambda d: d['minutes'])
 
         northbound_86 = ['NB ' + str(i['number']) + ': ' + str(i['minutes']) + 'min' for i in northbound_86]
-        southbound_86 = ['NB ' + str(i['number']) + ': ' + str(i['minutes']) + 'min' for i in southbound_86]
+        southbound_86 = ['SB ' + str(i['number']) + ': ' + str(i['minutes']) + 'min' for i in southbound_86]
 
         message_json = {
             'data': [
