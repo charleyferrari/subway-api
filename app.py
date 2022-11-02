@@ -42,10 +42,11 @@ def return_message_json():
                 delta = update.arrival - now
                 minutes = delta.seconds//60
                 seconds = delta.seconds%60
-                number = int(train.nyc_train_id[:2])
                 if '121S' in update.stop_id:
+                    number = int(train.nyc_train_id[:2])
                     southbound_86.append({'number': number, 'minutes': minutes})
                 elif '121N' in update.stop_id:
+                    number = int(train.nyc_train_id[:2])
                     northbound_86.append({'number': number, 'minutes': minutes})
 
         northbound_86 = sorted(northbound_86, key=lambda d: d['minutes'])
